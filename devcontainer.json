@@ -1,0 +1,26 @@
+{
+    "name": "Terraform",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "terraform",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.formatOnPaste": false, // required
+                "editor.formatOnType": false, // required
+                "editor.formatOnSave": true, // optional
+                "editor.formatOnSaveMode": "file", // required to format on save
+                "files.autoSave": "off" // optional but recommended
+            },
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "4ops.terraform",
+                "hashicorp.terraform"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    },
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "postCreateCommand": "pip install -r requirements.txt"
+}
