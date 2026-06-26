@@ -1,0 +1,14 @@
+apache-airflow==2.9.3
+apache-airflow-providers-common-compat==1.2.1
+apache-airflow-providers-common-io==1.4.2
+apache-airflow-providers-common-sql==1.25.0rc1
+apache-airflow-providers-fab==1.5.2
+apache-airflow-providers-ftp==3.11.1
+apache-airflow-providers-google==10.25.0
+apache-airflow-providers-http==4.13.2
+apache-airflow-providers-imap==3.7.0
+apache-airflow-providers-smtp==1.8.0
+apache-airflow-providers-sqlite==3.9.0
+pandas==2.1.4
+pandas-gbq==0.24.0
+pre_commit==4.0.1

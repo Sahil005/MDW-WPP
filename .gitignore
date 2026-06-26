@@ -1,0 +1,48 @@
+# OS generated files
+._*
+*~
+\#*\#
+.\#*
+.DS_Store
+
+# Yarn
+yarn.lock
+.yarn-integrity
+
+# Python
+.env
+*.pyc
+venv
+__pycache__/
+
+# Terraform
+.terraform
+*.tfstate
+*.tfstate*
+*.tfplan
+
+# Checkov external modules
+.checkov_modules
+.external_modules
+
+# zip archives (functions, dataflow templates etc)
+*.zip
+
+# temp directory
+tmp
+/tests
+
+# Airflow junk
+airflow/logs
+airflow.db
+standalone_admin_password.txt
+webserver_config.py
+airflow-webserver.pid
+.vscode/settings.json
+airflow/airflow-docker/.zshrc
+
+# Ignore all .log files
+*.log
+
+# Optional: Ignore the entire logs/ directory
+logs/

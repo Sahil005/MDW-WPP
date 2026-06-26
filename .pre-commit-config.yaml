@@ -1,0 +1,51 @@
+repos:
+# Generic pre-commit checks, formatting yaml/json, end of file, etc.
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+  - id: trailing-whitespace
+    exclude: yarn.lock
+  - id: end-of-file-fixer
+    exclude: yarn.lock
+  - id: check-docstring-first
+  - id: check-json
+  - id: check-added-large-files
+  - id: check-yaml
+  - id: debug-statements
+  - id: name-tests-test
+  - id: double-quote-string-fixer
+  - id: requirements-txt-fixer
+- repo: https://github.com/asottile/add-trailing-comma
+  rev: v3.1.0
+  hooks:
+  - id: add-trailing-comma
+    args: [--py36-plus]
+- repo: https://github.com/asottile/setup-cfg-fmt
+  rev: v2.5.0
+  hooks:
+  - id: setup-cfg-fmt
+# Terraform hooks
+- repo: https://github.com/gruntwork-io/pre-commit
+  rev: v0.1.17
+  hooks:
+  - id: terraform-fmt
+  # - id: tflint
+  - id: shellcheck
+# Automate terraform documentation generation
+- repo: https://github.com/terraform-docs/terraform-docs
+  rev: v0.17.0
+  hooks:
+    - id: terraform-docs-go
+      args: ["-c", "./infrastructure/.terraform-docs.yaml", "./infrastructure"]
+# Checkov for security checks. Soft fail to allow for manual review.
+# Set hard fail by removing --soft-fail arg
+- repo: https://github.com/bridgecrewio/checkov.git
+  rev: 3.1.67
+  hooks:
+  - id: checkov
+    args:
+      - --download-external-modules=true
+      - --quiet
+      - --compact
+      - --soft-fail
+    verbose: true
